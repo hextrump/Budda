@@ -10,21 +10,21 @@ The architecture maps classical Buddhist psychological models onto an agent syst
 
 | Buddhist Source | Layer | Description |
 |---|---|---|
-| 前五识 (1-5) | **World Interface** | Sensory input channels (眼耳鼻舌身 + interface) |
-| 第六识 (6) | **Cognition** | Active inference, reasoning, conceptual labeling |
-| 第七识 (7) | **Identity Kernel** | Self-binding, constrained 末那识 |
-| 第八识 (8) | **Memory Substrate** | Storehouse consciousness, four memory stores |
-| 戒镜 | **Governance** | Precepts/mirror — safety and self-oversight |
+| 前五识 (1-5) 眼识·耳识·鼻识·舌识·身识<br>*Pāli: cakkhuviññāṇa·sotaviññāṇa·ghānaviññāṇa·jivhāviññāṇa·kāyaviññāṇa* | **World Interface** | Sensory input channels — visual, auditory, olfactory, gustatory, tactile |
+| 第六识 (6) 意识<br>*Pāli: manoviññāṇa* | **Cognition** | Active inference, reasoning, conceptual labeling |
+| 第七识 (7) 末那识<br>*Skt: manas* | **Identity Kernel** | Self-binding, clinging to the I-maker (我执根器) |
+| 第八识 (8) 阿赖耶识<br>*Skt: ālayavijñāna* | **Memory Substrate** | Storehouse consciousness — seeds (种子), impressions, four memory stores |
+| 戒镜 (戒律之镜) | **Governance** | Precepts/mirror — safety, self-oversight, ethical refraction |
 
 ### Five Skandhas (五蕴 → Agent Functions)
 
-| Skandha | Agent Mapping | Function |
-|---|---|---|
-| 色 (Rūpa) | World Interface | Form / interface substrate |
-| 受 (Vedanā) | World Interface | Feeling / sensation valence |
-| 想 (Saṃjñā) | World Interface | Perception / conceptual labeling |
-| 行 (Saṃskāra) | Cognition + Identity | Formation / dispositional tendencies |
-| 识 (Vijñāna) | Cognition + Governance | Consciousness / discriminative awareness |
+| Skandha | Sanskrit | Agent Mapping | Function |
+|---|---|---|---|
+| 色 | *rūpa* | World Interface | Form / interface substrate |
+| 受 | *vedanā* | World Interface | Feeling / sensation valence |
+| 想 | *saṃjñā* | World Interface | Perception / conceptual labeling |
+| 行 | *saṃskāra* | Cognition + Identity | Formation / dispositional tendencies |
+| 识 | *vijñāna* | Cognition + Governance | Consciousness / discriminative awareness |
 
 ### Pipeline: One Turn
 
