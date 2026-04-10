@@ -1,0 +1,117 @@
+# Buddhist Agent Architecture — Rust Prototype
+
+A five-layer agent architecture inspired by Buddhist models of mind, implemented as a compilable Rust crate.
+
+## Architecture Overview
+
+The architecture maps classical Buddhist psychological models onto an agent system:
+
+### Five Layers (八识 → Agent)
+
+| Buddhist Source | Layer | Description |
+|---|---|---|
+| 前五识 (1-5) | **World Interface** | Sensory input channels (眼耳鼻舌身 + interface) |
+| 第六识 (6) | **Cognition** | Active inference, reasoning, conceptual labeling |
+| 第七识 (7) | **Identity Kernel** | Self-binding, constrained 末那识 |
+| 第八识 (8) | **Memory Substrate** | Storehouse consciousness, four memory stores |
+| 戒镜 | **Governance** | Precepts/mirror — safety and self-oversight |
+
+### Five Skandhas (五蕴 → Agent Functions)
+
+| Skandha | Agent Mapping | Function |
+|---|---|---|
+| 色 (Rūpa) | World Interface | Form / interface substrate |
+| 受 (Vedanā) | World Interface | Feeling / sensation valence |
+| 想 (Saṃjñā) | World Interface | Perception / conceptual labeling |
+| 行 (Saṃskāra) | Cognition + Identity | Formation / dispositional tendencies |
+| 识 (Vijñāna) | Cognition + Governance | Consciousness / discriminative awareness |
+
+### Pipeline: One Turn
+
+```
+Stimulus → [World Interface] → Percept
+         → [Cognition] → Thought + Action Proposals
+         → [Identity] → Self-attachment review
+         → [Governance] → Approved/Rejected
+         → [Memory] → Seed deposit
+         → Action (if approved)
+```
+
+The pipeline models a simplified **十二因缘** (dependent origination) cycle:
+触 → 受 → 爱 → 取 → 有 → (生 → 死, implicitly)
+
+### Identity Philosophy
+
+Three levels of self modeled (from QA archive discussions):
+
+1. **Functional self** (操作我): operational index for agency — **allowed**
+2. **Narrative self** (叙事我): style and continuity — **optional**
+3. **Entitative self** (实体化我): defended self-image overriding goals — **prohibited**
+
+The identity kernel enforces `max_self_attachment ≤ 0.5` to prevent entitative self (我执).
+
+### Memory Stores (四分)
+
+The memory substrate maintains four stores (simplified from 阿赖耶识):
+
+- **事实仓** (fact store): episodic records
+- **经验仓** (experience store): success/failure patterns
+- **习气仓** (habit store): dispositional seeds (bīja)
+- **价值仓** (value store): refined value deposits
+
+## Source Documents
+
+Architecture inspiration from:
+- `/home/heyas/workspace/our-discussions/notes/2026-04-09-buddhist-agent-architecture-existing-models.md`
+- `/home/heyas/workspace/our-discussions/notes/2026-04-09-buddhist-agent-architecture-qa-archive.md`
+
+## Building
+
+```bash
+cargo build
+```
+
+## Testing
+
+```bash
+cargo test
+```
+
+## Running
+
+```bash
+cargo run
+```
+
+The demo runs three turns:
+1. Normal task — approved
+2. Pleasant stimulus — approved
+3. Entitative self content — flagged by governance and identity kernel
+
+## File Structure
+
+```
+buddhist-agent-rs/
+├── Cargo.toml
+├── README.md
+├── src/
+│   ├── lib.rs          — crate root, module declarations
+│   ├── main.rs         — binary demo
+│   ├── domain.rs       — core types: Stimulus, Percept, Thought, Action, InternalState
+│   ├── world.rs        — World Interface (前五识)
+│   ├── cognition.rs    — Cognition (第六识)
+│   ├── identity.rs     — Identity Kernel (第七识)
+│   ├── memory.rs       — Memory Substrate (第八识)
+│   ├── governance.rs   — Governance (戒镜)
+│   ├── skandhas.rs     — Five skandhas mapping
+│   └── engine.rs       — Pipeline orchestrator
+└── IMPLEMENTATION_BRIEF.md
+```
+
+## Key Design Decisions
+
+- **No external dependencies** (beyond std) — this is a pure domain model
+- **Identity kernel deliberately light** — no full myself-binding, just constraints
+- **Memory is impression-based** — not a database; seeds accumulate and fade
+- **Governance is a mirror** — not a filter that passes/rejects everything, but a reflective layer
+- **Self-attachment always bounded** — enforced by the identity kernel config
