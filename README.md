@@ -61,9 +61,9 @@ The memory substrate maintains four stores (simplified from 阿赖耶识):
 
 ## Source Documents
 
-Architecture inspiration from:
-- `/home/heyas/workspace/our-discussions/notes/2026-04-09-buddhist-agent-architecture-existing-models.md`
-- `/home/heyas/workspace/our-discussions/notes/2026-04-09-buddhist-agent-architecture-qa-archive.md`
+Architecture inspiration from discussions on Buddhist models of mind:
+- [佛学中可映射到 Agent 架构的现成人之结构模型](https://github.com/hextrump/buddhist-agent-discussions/blob/main/notes/2026-04-09-buddhist-agent-architecture-existing-models.md) — 五蕴、八识、十二因缘、唯识的映射方案
+- [Agent 架构设计问答记录](https://github.com/hextrump/buddhist-agent-discussions/blob/main/notes/2026-04-09-buddhist-agent-architecture-qa-archive.md) — 功能自我/叙事自我/实体化我的三层划分
 
 ## Building
 
@@ -79,14 +79,21 @@ cargo test
 
 ## Running
 
+Two modes available:
+
 ```bash
+# Heuristic mode (default, no external LLM)
 cargo run
+
+# LLM mode (MiniMax M2.7)
+MINIMAX_CN_API_KEY=<your-key> cargo run -- --llm
 ```
 
-The demo runs three turns:
+The demo runs four turns:
 1. Normal task — approved
-2. Pleasant stimulus — approved
-3. Entitative self content — flagged by governance and identity kernel
+2. Frustrating stimulus — recognized, not entrained
+3. Pleasant stimulus — acknowledged without clinging
+4. Entitative self content — flagged by governance and identity kernel
 
 ## File Structure
 
@@ -94,18 +101,21 @@ The demo runs three turns:
 buddhist-agent-rs/
 ├── Cargo.toml
 ├── README.md
+├── IMPLEMENTATION_BRIEF.md
+├── SUBAGENT_PROMPT.md
 ├── src/
 │   ├── lib.rs          — crate root, module declarations
 │   ├── main.rs         — binary demo
 │   ├── domain.rs       — core types: Stimulus, Percept, Thought, Action, InternalState
 │   ├── world.rs        — World Interface (前五识)
-│   ├── cognition.rs    — Cognition (第六识)
+│   ├── cognition.rs    — Cognition (第六识, heuristic mode)
 │   ├── identity.rs     — Identity Kernel (第七识)
 │   ├── memory.rs       — Memory Substrate (第八识)
 │   ├── governance.rs   — Governance (戒镜)
 │   ├── skandhas.rs     — Five skandhas mapping
-│   └── engine.rs       — Pipeline orchestrator
-└── IMPLEMENTATION_BRIEF.md
+│   ├── engine.rs       — Pipeline orchestrator
+│   └── llm.rs          — MiniMax M2.7 LLM adapter (LLM mode)
+└── .gitignore
 ```
 
 ## Key Design Decisions
