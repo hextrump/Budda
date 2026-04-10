@@ -10,21 +10,21 @@ The architecture maps classical Buddhist psychological models onto an agent syst
 
 | Buddhist Source | Layer | Description |
 |---|---|---|
-| 前五识 (1-5) 眼识·耳识·鼻识·舌识·身识<br>*Pāli: cakkhuviññāṇa·sotaviññāṇa·ghānaviññāṇa·jivhāviññāṇa·kāyaviññāṇa* | **World Interface** | Sensory input channels — visual, auditory, olfactory, gustatory, tactile |
-| 第六识 (6) 意识<br>*Pāli: manoviññāṇa* | **Cognition** | Active inference, reasoning, conceptual labeling |
-| 第七识 (7) 末那识<br>*Skt: manas* | **Identity Kernel** | Self-binding, clinging to the I-maker (我执根器) |
-| 第八识 (8) 阿赖耶识<br>*Skt: ālayavijñāna* | **Memory Substrate** | Storehouse consciousness — seeds (种子), impressions, four memory stores |
+| 前五识 (1-5) 眼识·耳识·鼻识·舌识·身识<br>*Pāli: चक्खुविञ्ञाण·सोतविञ्ञाण·घानविञ्ञाण·जिव्हाविञ्ञाण·कायविञ्ञाण* | **World Interface** | Sensory input channels — visual, auditory, olfactory, gustatory, tactile |
+| 第六识 (6) 意识<br>*Pāli: मनोविञ्ञाण* | **Cognition** | Active inference, reasoning, conceptual labeling |
+| 第七识 (7) 末那识<br>*Skt: मनस्* | **Identity Kernel** | Self-binding, clinging to the I-maker (我执根器) |
+| 第八识 (8) 阿赖耶识<br>*Skt: आलयविञ्ञान* | **Memory Substrate** | Storehouse consciousness — seeds (种子), impressions, four memory stores |
 | 戒镜 (戒律之镜) | **Governance** | Precepts/mirror — safety, self-oversight, ethical refraction |
 
 ### Five Skandhas (五蕴 → Agent Functions)
 
 | Skandha | Sanskrit | Agent Mapping | Function |
 |---|---|---|---|
-| 色 | *rūpa* | World Interface | Form / interface substrate |
-| 受 | *vedanā* | World Interface | Feeling / sensation valence |
-| 想 | *saṃjñā* | World Interface | Perception / conceptual labeling |
-| 行 | *saṃskāra* | Cognition + Identity | Formation / dispositional tendencies |
-| 识 | *vijñāna* | Cognition + Governance | Consciousness / discriminative awareness |
+| 色 | *रूप* | World Interface | Form / interface substrate |
+| 受 | *वेदना* | World Interface | Feeling / sensation valence |
+| 想 | *संज्ञा* | World Interface | Perception / conceptual labeling |
+| 行 | *संस्कार* | Cognition + Identity | Formation / dispositional tendencies |
+| 识 | *विज्ञान* | Cognition + Governance | Consciousness / discriminative awareness |
 
 ### Pipeline: One Turn
 
